@@ -6,7 +6,7 @@ class Tree {
 
     addValue(val){
 
-        let node = new Node(val);
+        let node = new Node(val, 1, width/2, 20);
 
         if(this.root === null){
             this.root = node;
@@ -14,10 +14,12 @@ class Tree {
         else {
             this.root.addNode(node);
         }
+
+        this.visit();
     }
 
     visit(){
-        this.root.visit();
+        this.root.visit(this.root);
     }
 
     find(val){
